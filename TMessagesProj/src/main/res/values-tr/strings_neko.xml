@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="NekoSettings">Nekogram Ayarları</string>
+    <string name="NekoSettings">TeleCat Ayarları</string>
     <string name="PreferIPv6">IPv6 üzerinden bağlanmayı tercih edin</string>
     <string name="MessageMenu">Mesaj Menüsü</string>
     <string name="HidePhone">Telefon numaramı gizle</string>
@@ -22,7 +22,7 @@
     <string name="AddToSavedMessages">Mesajı Kaydet</string>
     <string name="CreateMention">Bahset</string>
     <string name="Prpr">Peropero</string>
-    <string name="NekogramRunning">Nekogram çalışıyor</string>
+    <string name="NekogramRunning">TeleCat çalışıyor</string>
     <string name="EventType">Kenar çubuğu simgeleri</string>
     <string name="DependsOnDate">Tarihe bağlı</string>
     <string name="Christmas">Yılbaşı</string>
@@ -114,7 +114,7 @@
     <string name="RegistrationDateNewer">Şu %s tarihinden sonra</string>
     <string name="RegistrationDateOlder">Şu %s tarihinden önce</string>
     <string name="RegistrationDateApproximately">Yaklaşık olarak %s</string>
-    <string name="UpdateNekogram">Nekogram\'ı Güncelleyiniz</string>
+    <string name="UpdateNekogram">TeleCat\'ı Güncelleyiniz</string>
     <string name="TranslationTarget">Hedef dil</string>
     <string name="TranslationTargetApp">Uygulamayı takip edin</string>
     <string name="Translator">Çeviri</string>
@@ -140,9 +140,9 @@
     <string name="OfficialSite">Resmi site</string>
     <string name="MutualContact">Karşılıklı kişi</string>
     <string name="MutualContactDescription">Bu kişi de sizi kişilerine kaydetti.</string>
-    <string name="InviteTextNeko">Hey, sohbet etmek için Nekogram kullanıyorum. Bana katıl! Buradan indirilebilirsin: %1$s</string>
-    <string name="ShareNekogram">Nekogram\'ı paylaş...</string>
-    <string name="NekogramVersion">Telegram %2$s tabanlı\nNekogram %1$s\n%3$s tarafından tasarlandı</string>
+    <string name="InviteTextNeko">Hey, sohbet etmek için TeleCat kullanıyorum. Bana katıl! Buradan indirilebilirsin: %1$s</string>
+    <string name="ShareNekogram">TeleCat\'ı paylaş...</string>
+    <string name="NekogramVersion">Telegram %2$s tabanlı\nTeleCat %1$s\n%3$s tarafından tasarlandı</string>
     <string name="UpdateInstalling">Güncelleme yükleniyor...</string>
     <string name="UpdateInstallingNotification">Güncelleme tamamlandığında bir bildirim gösterilecek.</string>
     <string name="UpdateInstallingRelaunch">Güncelleme tamamlandığında uygulama kendini yeniden başlatacak.</string>
@@ -165,7 +165,7 @@
     <string name="SaveToDownloadCount_few">%1$d dosya indirilenlere kaydediliyor</string>
     <string name="SaveToDownloadCount_many">%1$d dosya indirilenlere kaydediliyor</string>
     <string name="SaveToDownloadCount_other">%1$d dosya indirilenlere kaydediliyor</string>
-    <string name="AppLinkNotVerifiedMessage">Android 12 ve üstü sürümlerde, t.me bağlantılarını Nekogram\'da açmak için doğrulanmış bağlantılara elle bağlantı eklemelisiniz.</string>
+    <string name="AppLinkNotVerifiedMessage">Android 12 ve üstü sürümlerde, t.me bağlantılarını TeleCat\'da açmak için doğrulanmış bağlantılara elle bağlantı eklemelisiniz.</string>
     <string name="AppLinkNotVerifiedTitle">Uygulama bağlantıları doğrulanmamış</string>
     <string name="AutoTranslate">Otomatik çeviri</string>
     <string name="AutoTranslateAbout">Başka bir dilde olan mesajları otomatik olarak çevirin.</string>

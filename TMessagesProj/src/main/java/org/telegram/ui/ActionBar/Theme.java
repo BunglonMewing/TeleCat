@@ -1537,6 +1537,14 @@ public class Theme {
                 return getString(R.string.ThemeDay);
             } else if ("Night".equals(name)) {
                 return getString(R.string.ThemeNight);
+            } else if ("Material 3".equals(name)) {
+                return getString(R.string.ThemeMaterial3);
+            } else if ("Material 3 Dark".equals(name)) {
+                return getString(R.string.ThemeMaterial3Dark);
+            } else if ("Liquid Glass".equals(name)) {
+                return getString(R.string.ThemeLiquidGlass);
+            } else if ("Liquid Glass Dark".equals(name)) {
+                return getString(R.string.ThemeLiquidGlassDark);
             }
             return info != null ? info.title : name;
         }
@@ -1657,9 +1665,9 @@ public class Theme {
             if (isDark != UNKNOWN) {
                 return isDark == DARK;
             }
-            if ("Dark Blue".equals(name) || "Night".equals(name) || "AMOLED".equals(name) || "Monet Dark".equals(name) || "Monet AMOLED".equals(name)) {
+            if ("Dark Blue".equals(name) || "Night".equals(name) || "AMOLED".equals(name) || "Monet Dark".equals(name) || "Monet AMOLED".equals(name) || "Material 3 Dark".equals(name) || "Liquid Glass Dark".equals(name)) {
                 isDark = DARK;
-            } else if ("Blue".equals(name) || "Arctic Blue".equals(name) || "Day".equals(name) || "Monet Light".equals(name)) {
+            } else if ("Blue".equals(name) || "Arctic Blue".equals(name) || "Day".equals(name) || "Monet Light".equals(name) || "Material 3".equals(name) || "Liquid Glass".equals(name)) {
                 isDark = LIGHT;
             }
             if (isDark == UNKNOWN) {
@@ -4088,6 +4096,48 @@ public class Theme {
             themes.add(themeInfo);
             themesDict.put("Monet AMOLED", themeInfo);
         }
+
+        // TeleCat look: Material 3 and Liquid Glass live next to the upstream palettes,
+        // so Settings > Appearance lists every family in one picker.
+        themeInfo = new ThemeInfo();
+        themeInfo.name = "Material 3";
+        themeInfo.assetName = "telecat_material_light.attheme";
+        themeInfo.previewBackgroundColor = 0xffeef1f8;
+        themeInfo.setPreviewInColor(0xffd6e3ff);
+        themeInfo.setPreviewOutColor(0xff0061a7);
+        themeInfo.sortIndex = -4;
+        themes.add(themeInfo);
+        themesDict.put("Material 3", themeInfo);
+
+        themeInfo = new ThemeInfo();
+        themeInfo.name = "Material 3 Dark";
+        themeInfo.assetName = "telecat_material_dark.attheme";
+        themeInfo.previewBackgroundColor = 0xff191c21;
+        themeInfo.setPreviewInColor(0xff39475f);
+        themeInfo.setPreviewOutColor(0xff5493e1);
+        themeInfo.sortIndex = -3;
+        themes.add(themeInfo);
+        themesDict.put("Material 3 Dark", themeInfo);
+
+        themeInfo = new ThemeInfo();
+        themeInfo.name = "Liquid Glass";
+        themeInfo.assetName = "telecat_glass_light.attheme";
+        themeInfo.previewBackgroundColor = 0xfff2f2f7;
+        themeInfo.setPreviewInColor(0xffe9e9eb);
+        themeInfo.setPreviewOutColor(0xff0a6ed1);
+        themeInfo.sortIndex = -2;
+        themes.add(themeInfo);
+        themesDict.put("Liquid Glass", themeInfo);
+
+        themeInfo = new ThemeInfo();
+        themeInfo.name = "Liquid Glass Dark";
+        themeInfo.assetName = "telecat_glass_dark.attheme";
+        themeInfo.previewBackgroundColor = 0xff1c1c1e;
+        themeInfo.setPreviewInColor(0xff2c2c2e);
+        themeInfo.setPreviewOutColor(0xff0a6ed1);
+        themeInfo.sortIndex = -1;
+        themes.add(themeInfo);
+        themesDict.put("Liquid Glass Dark", themeInfo);
 
         String themesString = themeConfig.getString("themes2", null);
 
