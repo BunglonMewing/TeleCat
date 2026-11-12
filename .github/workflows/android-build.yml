@@ -112,6 +112,7 @@ jobs:
             echo "$GOOGLE_SERVICES_JSON" | base64 --decode > TMessagesProj_App/google-services.json
           else
             echo "::warning::No GOOGLE_SERVICES_JSON secret, writing a placeholder so the google-services plugin can run."
+            # One client per application id: release/play use the base id, debug appends .beta.
             cat > TMessagesProj_App/google-services.json <<'JSON'
           {
             "project_info": {
@@ -124,6 +125,15 @@ jobs:
                 "client_info": {
                   "mobilesdk_app_id": "1:000000000000:android:0000000000000000000000",
                   "android_client_info": { "package_name": "tw.nekomimi.nekogram" }
+                },
+                "oauth_client": [],
+                "api_key": [ { "current_key": "AIzaSyAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" } ],
+                "services": { "appinvite_service": { "other_platform_oauth_client": [] } }
+              },
+              {
+                "client_info": {
+                  "mobilesdk_app_id": "1:000000000000:android:1111111111111111111111",
+                  "android_client_info": { "package_name": "tw.nekomimi.nekogram.beta" }
                 },
                 "oauth_client": [],
                 "api_key": [ { "current_key": "AIzaSyAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" } ],

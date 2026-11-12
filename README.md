@@ -59,9 +59,13 @@ register it in `Theme.java` next to the existing built-in themes (`themes.add` p
 GitHub Actions runs `.github/workflows/android-build.yml` on every push and pull request
 using debug builds, and can build release APKs from the Actions tab. Repository secrets
 it reads: `API_ID`, `API_HASH`, `HELPER_BOT_ID`, `HELPER_BOT_USERNAME`, `MAPS_API_KEY`,
-`SENTRY_DSN`, `KEYSTORE_BASE64`, `KEYSTORE_PASSWORD`, `KEY_ALIAS`, `KEY_PASSWORD`,
-`GOOGLE_SERVICES_JSON`. Without them the build still compiles with placeholder values and
-the APK cannot sign in.
+`SENTRY_DSN`, `SENTRY_PROPERTIES` (base64, required by release builds), `KEYSTORE_BASE64`,
+`KEYSTORE_PASSWORD`, `KEY_ALIAS`, `KEY_PASSWORD`, `GOOGLE_SERVICES_JSON` (base64).
+
+Without them a debug build still compiles: the workflow writes placeholder `apiId`/`apiHash`,
+a placeholder `google-services.json` with a client for both `tw.nekomimi.nekogram` and
+`tw.nekomimi.nekogram.beta`, and falls back to debug signing. That APK cannot sign in to
+Telegram and push notifications do not work until the real values are set.
 
 ## Localization
 
