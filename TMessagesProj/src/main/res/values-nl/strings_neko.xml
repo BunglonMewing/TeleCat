@@ -21,7 +21,7 @@
     <string name="AddToSavedMessages">Bewaar bericht</string>
     <string name="CreateMention">Maak vermelding</string>
     <string name="Prpr">Peropero</string>
-    <string name="NekogramRunning">Nekogram wordt uitgevoerd</string>
+    <string name="NekogramRunning">TeleCat wordt uitgevoerd</string>
     <string name="EventType">Zijbalk pictogrammen set</string>
     <string name="DependsOnDate">Afhankelijk van datum</string>
     <string name="Christmas">Kerst</string>
@@ -113,7 +113,7 @@
     <string name="RegistrationDateNewer">Nieuwer dan %s</string>
     <string name="RegistrationDateOlder">Ouder dan %s</string>
     <string name="RegistrationDateApproximately">Ongeveer %s</string>
-    <string name="UpdateNekogram">Nekogram bijwerken</string>
+    <string name="UpdateNekogram">TeleCat bijwerken</string>
     <string name="TranslationTarget">Doeltaal</string>
     <string name="TranslationTargetApp">Systeem volgen</string>
     <string name="Translator">Vertaler</string>

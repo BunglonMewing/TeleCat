@@ -22,7 +22,7 @@
     <string name="AddToSavedMessages">Simpan Pesan</string>
     <string name="CreateMention">Buat sebutan</string>
     <string name="Prpr">Peropero</string>
-    <string name="NekogramRunning">Nekogram sedang berjalan</string>
+    <string name="NekogramRunning">TeleCat sedang berjalan</string>
     <string name="EventType">Set ikon bilah sisi</string>
     <string name="DependsOnDate">Berdasarkan tanggal</string>
     <string name="Christmas">Natal</string>
@@ -114,7 +114,7 @@
     <string name="RegistrationDateNewer">Lebih baru dari %s</string>
     <string name="RegistrationDateOlder">Lebih tua dari %s</string>
     <string name="RegistrationDateApproximately">Sekitar %s</string>
-    <string name="UpdateNekogram">Perbarui Nekogram</string>
+    <string name="UpdateNekogram">Perbarui TeleCat</string>
     <string name="TranslationTarget">Bahasa tujuan</string>
     <string name="TranslationTargetApp">Mengikuti aplikasi</string>
     <string name="Translator">Penerjemah</string>
@@ -140,9 +140,9 @@
     <string name="OfficialSite">Situs resmi</string>
     <string name="MutualContact">Kontak timbal balik</string>
     <string name="MutualContactDescription">Anda saling menyimpan nomor dengan kontak ini.</string>
-    <string name="InviteTextNeko">Hai, saya menggunakan Nekogram untuk mengobrol. Ayo ikut! Unduh di sini: %1$s</string>
-    <string name="ShareNekogram">Bagikan Nekogram...</string>
-    <string name="NekogramVersion">Nekogram %1$s\nBerdasarkan Telegram %2$s\nDibuat oleh %3$s</string>
+    <string name="InviteTextNeko">Hai, saya menggunakan TeleCat untuk mengobrol. Ayo ikut! Unduh di sini: %1$s</string>
+    <string name="ShareNekogram">Bagikan TeleCat...</string>
+    <string name="NekogramVersion">TeleCat %1$s\nBerdasarkan Telegram %2$s\nDibuat oleh %3$s</string>
     <string name="UpdateInstalling">Memasang Pembaruan...</string>
     <string name="UpdateInstallingNotification">Notifikasi pemberitahuan akan ditampilkan ketika pembaruan selesai.</string>
     <string name="UpdateInstallingRelaunch">Aplikasi akan memulai ulang ketika pembaruan selesai.</string>
@@ -165,7 +165,7 @@
     <string name="SaveToDownloadCount_few">Menyimpan berkas %1$d ke Unduhan</string>
     <string name="SaveToDownloadCount_many">Menyimpan berkas %1$d ke Unduhan</string>
     <string name="SaveToDownloadCount_other">Menyimpan berkas %1$d ke Unduhan</string>
-    <string name="AppLinkNotVerifiedMessage">Untuk Android 12 dan lebih baru, Anda perlu menambahkan tautan secara manual ke tautan terverifikasi untuk membuka tautan t.me di Nekogram.</string>
+    <string name="AppLinkNotVerifiedMessage">Untuk Android 12 dan lebih baru, Anda perlu menambahkan tautan secara manual ke tautan terverifikasi untuk membuka tautan t.me di TeleCat.</string>
     <string name="AppLinkNotVerifiedTitle">Tautan aplikasi tidak terverifikasi</string>
     <string name="AutoTranslate">Terjemahkan otomatis</string>
     <string name="AutoTranslateAbout">Terjemahkan pesan bahasa lain secara otomatis.</string>
