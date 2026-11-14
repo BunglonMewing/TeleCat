@@ -62,6 +62,11 @@ it reads: `API_ID`, `API_HASH`, `HELPER_BOT_ID`, `HELPER_BOT_USERNAME`, `MAPS_AP
 `SENTRY_DSN`, `SENTRY_PROPERTIES` (base64, required by release builds), `KEYSTORE_BASE64`,
 `KEYSTORE_PASSWORD`, `KEY_ALIAS`, `KEY_PASSWORD`, `GOOGLE_SERVICES_JSON` (base64).
 
+Every ABI is published as its own artifact, not packed into one zip: `arm64-v8a`,
+`armeabi-v7a`, `x86`, `x86_64` and `universal`. A release build from the Actions tab
+stops with an error when `API_ID` or `API_HASH` is missing, because Telegram refuses
+sign-in from an app id it does not know.
+
 Without them a debug build still compiles: the workflow writes placeholder `apiId`/`apiHash`,
 a placeholder `google-services.json` with a client for both `tw.nekomimi.nekogram` and
 `tw.nekomimi.nekogram.beta`, and falls back to debug signing. That APK cannot sign in to
