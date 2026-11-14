@@ -302,7 +302,12 @@ public class ApplicationLoader extends Application {
 
         // AndroidUtilities must be initialized before FileLog
         final String helloWorld = AndroidUtilities.getHelloWorld();
-        AnalyticsHelper.start(this);
+        try {
+            AnalyticsHelper.start(this);
+        } catch (Throwable e) {
+            // A broken analytics config must not keep the app on a blank window.
+            FileLog.e(e);
+        }
         CronetHelper.init(this);
 
         if (BuildVars.LOGS_ENABLED) {

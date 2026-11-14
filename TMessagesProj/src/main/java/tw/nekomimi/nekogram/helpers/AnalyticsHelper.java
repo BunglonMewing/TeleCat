@@ -43,26 +43,40 @@ public class AnalyticsHelper {
         if (userId == null || userId.length() < 32) {
             preferences.edit().putString("userId", userId = generateUserID()).apply();
         }
-        firebaseAnalytics = FirebaseAnalytics.getInstance(application);
-        firebaseAnalytics.setAnalyticsCollectionEnabled(true);
-        firebaseAnalytics.setUserId(userId);
-        SentryAndroid.init(application, options -> {
-            options.setDsn(Extra.SENTRY_DSN);
-            options.setEnvironment(BuildConfig.BUILD_TYPE);
-            options.setPrintUncaughtStackTrace(true);
-            options.getDataCollection().forceDataCollection();
-            options.setEnableUserInteractionTracing(true);
-            options.setAttachViewHierarchy(true);
-            options.setEnableSystemEventBreadcrumbsExtras(true);
-            options.setTracesSampleRate(0.01);
-        });
-        var user = new User();
-        user.setId(userId);
-        Sentry.setUser(user);
+        try {
+            firebaseAnalytics = FirebaseAnalytics.getInstance(application);
+            firebaseAnalytics.setAnalyticsCollectionEnabled(true);
+            firebaseAnalytics.setUserId(userId);
+        } catch (Throwable e) {
+            firebaseAnalytics = null;
+            FileLog.e("Analytics: Firebase is unavailable", e);
+        }
+        // Sentry throws when the DSN is set but unparsable, and local.properties has no DSN
+        // until it is configured.
+        if (hasSentryDsn()) {
+            SentryAndroid.init(application, options -> {
+                options.setDsn(Extra.SENTRY_DSN);
+                options.setEnvironment(BuildConfig.BUILD_TYPE);
+                options.setPrintUncaughtStackTrace(true);
+                options.getDataCollection().forceDataCollection();
+                options.setEnableUserInteractionTracing(true);
+                options.setAttachViewHierarchy(true);
+                options.setEnableSystemEventBreadcrumbsExtras(true);
+                options.setTracesSampleRate(0.01);
+            });
+            var user = new User();
+            user.setId(userId);
+            Sentry.setUser(user);
+        }
 
         if (BuildVars.LOGS_ENABLED) {
             FileLog.d("Analytics: userId = " + userId);
         }
+    }
+
+    private static boolean hasSentryDsn() {
+        String dsn = Extra.SENTRY_DSN;
+        return dsn != null && dsn.startsWith("https://") && dsn.contains("@");
     }
 
     private static String generateUserID() {
@@ -83,7 +97,7 @@ public class AnalyticsHelper {
         breadcrumb.setData("state", lifecycle);
         breadcrumb.setData("screen", getFragmentName(fragment));
         Sentry.addBreadcrumb(breadcrumb);
-        if ("created".equals(lifecycle)) {
+        if ("created".equals(lifecycle) && firebaseAnalytics != null) {
             firebaseAnalytics.logEvent(FirebaseAnalytics.Event.SCREEN_VIEW, null);
         }
     }
@@ -94,7 +108,7 @@ public class AnalyticsHelper {
     }
 
     public static void trackEvent(String event, HashMap<String, String> map) {
-        if (analyticsDisabled) return;
+        if (analyticsDisabled || firebaseAnalytics == null) return;
         Bundle bundle = new Bundle();
         for (String key : map.keySet()) {
             bundle.putString(key, map.get(key));
